@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar';
 
 const Home = () => (
   <>
-    <Navbar />
+    <Navbar backLink="/" />
     <Header />
     <div>This is the Home</div>
     <Link to="/items">Look at Items</Link>

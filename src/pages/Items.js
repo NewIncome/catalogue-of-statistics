@@ -6,7 +6,7 @@ import ItemList from '../containers/ItemList';
 
 const Items = () => (
   <>
-    <Navbar />
+    <Navbar backLink="/" />
     <Header />
     <div>This is the <u>List of Items</u> available</div>
     <Link to="/details"><ItemList /></Link>

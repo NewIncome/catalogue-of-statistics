@@ -5,7 +5,7 @@ import ItemDetails from '../containers/ItemDetails';
 
 const Details = () => (
   <>
-    <Navbar />
+    <Navbar backLink="/items" />
     <Header />
     <div>This is the <u>List of Details</u> available for the selected Item:</div>
     <ItemDetails />

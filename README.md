@@ -1,3 +1,16 @@
+## Links
+[GitHub Repo](https://github.com/NewIncome/catalogue-of-statistics)
+[:globe_with_meridians::computer: Heroku Livelink]( https://statistics-catalogue.herokuapp.com/) 
+## Built With• 
+- REACT
+- REDUX
+- JavaScript (ES6)
+- NPM
+- HTML5
+- CSS
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -25,6 +25,9 @@ const items = [
   },
 ];
 
-// const items = ['a', 'b', 'c'];
+const renderItems = routerProps => {
+  console.log('routerProps');
+  console.log(routerProps);
+};
 
-export default { items };
+export default { items, renderItems };

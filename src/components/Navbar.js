@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => (
   <nav id="navbar">
-    <div>{'<'}</div>
+    <div><Link to="/">{'<'}</Link></div>
     <div>Navbar</div>
   </nav>
 );

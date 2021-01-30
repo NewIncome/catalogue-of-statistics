@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
 import ItemList from '../containers/ItemList';
-import initialItems from '../utils';
+import { items as initialItems } from '../utils';
 
 const Items = () => (
   <>

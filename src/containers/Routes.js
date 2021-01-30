@@ -1,14 +1,17 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-// import Details from '../pages/Details';
 import Items from '../pages/Items';
 import Home from '../pages/Home';
 import Error from '../pages/Error';
+import { items } from '../utils';
+import Details from '../pages/Details';
 
 const Routes = () => {
   const renderItems = routerProps => {
-    console.log('routerProps');
-    console.log(routerProps);
+    const renderItemId = parseInt(routerProps.match.params.id, 10);
+    const found = items.map(i => i.id).includes(renderItemId);
+
+    return (found ? <Details id={renderItemId} /> : <Error />);
   };
 
   return (

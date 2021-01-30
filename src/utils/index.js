@@ -1,6 +1,9 @@
+/* eslint-disable import/prefer-default-export */
+
 const items = [
   {
     name: 'item1',
+    id: 1,
     details: [
       { detail1: 'it1-dt1' },
       { detail2: 'it1-dt2' },
@@ -9,6 +12,7 @@ const items = [
   },
   {
     name: 'item2',
+    id: 2,
     details: [
       { detail2: 'it2-dt2' },
       { detail3: 'it2-dt3' },
@@ -17,6 +21,7 @@ const items = [
   },
   {
     name: 'item3',
+    id: 3,
     details: [
       { detail2: 'it3-dt2' },
       { detail3: 'it3-dt3' },
@@ -25,9 +30,4 @@ const items = [
   },
 ];
 
-const renderItems = routerProps => {
-  console.log('routerProps');
-  console.log(routerProps);
-};
-
-export default { items, renderItems };
+export { items };

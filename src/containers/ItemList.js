@@ -3,18 +3,23 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Item from '../components/Item';
+import '../styles/itemList.css';
 
 const ItemList = ({ items: initialItems }) => {
   const [items, setItems] = useState(initialItems);
 
-  console.log(items);
-
   return (
     <section id="item-list">
       {items.map(item => (
-        <Link key={item.id} to={`/details/${item.id}`}>
-          <Item key={item.id} name={item.name} />
-        </Link>
+        <div className="item" key={`div${item.id}`}>
+          <Link
+            key={item.id}
+            to={`/details/${item.id}`}
+            className="item-link"
+          >
+            <Item key={item.id} name={item.name} />
+          </Link>
+        </div>
       ))}
     </section>
   );

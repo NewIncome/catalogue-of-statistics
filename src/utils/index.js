@@ -28,6 +28,42 @@ const items = [
       { detail3: 'it3-dt3' },
     ],
   },
+  {
+    name: 'item3',
+    id: 4,
+    details: [
+      { detail1: 'it4-dt1' },
+      { detail2: 'it4-dt2' },
+      { detail3: 'it4-dt3' },
+    ],
+  },
+  {
+    name: 'item3',
+    id: 5,
+    details: [
+      { detail1: 'it5-dt1' },
+      { detail2: 'it5-dt2' },
+      { detail3: 'it5-dt3' },
+    ],
+  },
+  {
+    name: 'item3',
+    id: 6,
+    details: [
+      { detail1: 'it6-dt1' },
+      { detail2: 'it6-dt2' },
+      { detail3: 'it6-dt3' },
+    ],
+  },
+  {
+    name: 'item3',
+    id: 7,
+    details: [
+      { detail1: 'it7-dt1' },
+      { detail2: 'it7-dt2' },
+      { detail3: 'it7-dt3' },
+    ],
+  },
 ];
 
 const getItemDetails = id => {

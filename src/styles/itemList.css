@@ -1,0 +1,17 @@
+#item-list {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  height: 646px;
+}
+
+.item {
+  width: 50%;
+  border: 1px solid #aaa;
+  height: 220px;
+}
+
+.item-link {
+  display: block;
+  height: 100%;
+}

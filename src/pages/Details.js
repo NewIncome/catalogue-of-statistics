@@ -10,7 +10,7 @@ const Details = props => {
   return (
     <>
       <Navbar backLink="/items" />
-      <Header />
+      <Header title="Item Details" />
       <div>This is the <u>List of Details</u> available for the selected Item:</div>
       <ItemDetails id={itemNo} />
     </>

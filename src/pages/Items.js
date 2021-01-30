@@ -8,7 +8,7 @@ import { items as initialItems } from '../utils';
 const Items = () => (
   <>
     <Navbar backLink="/" />
-    <Header />
+    <Header title="ITEMS search result" />
     <div>This is the <u>List of Items</u> available</div>
     <Link to="/details"><ItemList items={initialItems} /></Link>
   </>

@@ -6,8 +6,8 @@ import Navbar from '../components/Navbar';
 const Home = () => (
   <>
     <Navbar backLink="/" />
-    <Header />
-    <div>This is the Home</div>
+    <Header title="Statistics Catalogue" />
+    <div>Please search for a </div>
     <Link to="/items">Look at Items</Link>
   </>
 );

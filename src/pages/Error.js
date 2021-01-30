@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar';
 const Error = () => (
   <>
     <Navbar />
-    <Header />
+    <Header title="Error" />
     <div>The search resulted in an Error, please try again</div>
   </>
 );

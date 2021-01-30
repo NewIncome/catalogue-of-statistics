@@ -1,0 +1,12 @@
+#header {
+  display: flex;
+  background-color: #8585ff;
+  height: 150px;
+}
+
+.h-i {
+  border: 1px solid #ccc;
+  width: 50%;
+}
+
+.header-info { padding: 8% 0 0 5%; }

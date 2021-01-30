@@ -14,20 +14,32 @@ const items = [
     name: 'item2',
     id: 2,
     details: [
+      { detail1: 'it2-dt1' },
       { detail2: 'it2-dt2' },
       { detail3: 'it2-dt3' },
-      { detail1: 'it2-dt1' },
     ],
   },
   {
     name: 'item3',
     id: 3,
     details: [
+      { detail1: 'it3-dt1' },
       { detail2: 'it3-dt2' },
       { detail3: 'it3-dt3' },
-      { detail1: 'it3-dt1' },
     ],
   },
 ];
 
-export { items };
+const getItemDetails = id => {
+  const found = items.find(item => item.id === id).details;
+  console.log('found');
+  console.log(found);
+
+  return [
+    { detail: found[0].detail1 },
+    { detail: found[1].detail2 },
+    { detail: found[2].detail3 },
+  ];
+};
+
+export { items, getItemDetails };

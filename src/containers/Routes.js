@@ -9,9 +9,9 @@ import Details from '../pages/Details';
 const Routes = () => {
   const renderItems = routerProps => {
     const renderItemId = parseInt(routerProps.match.params.id, 10);
-    const found = items.map(i => i.id).includes(renderItemId);
+    const foundItem = items.find(i => i.id === renderItemId);
 
-    return (found ? <Details id={renderItemId} /> : <Error />);
+    return (foundItem ? <Details itemNo={renderItemId} /> : <Error />);
   };
 
   return (

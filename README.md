@@ -1,6 +1,9 @@
 ## Links
 [GitHub Repo](https://github.com/NewIncome/catalogue-of-statistics)
 [:globe_with_meridians::computer: Heroku Livelink]( https://statistics-catalogue.herokuapp.com/) 
+
+[Trello Organization diagram](https://trello.com/b/L44sXU3e/reactredux-capstone)
+
 ## Built With• 
 - REACT
 - REDUX

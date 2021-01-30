@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+#root {
+  background: linear-gradient(120deg, #ccf, #8080ff);
+  min-width: 500px;
+  border: 1px solid gray;
+  min-height: 800px;
+  margin: auto;
+  width: 45%;
+  max-height: 850px;
+}

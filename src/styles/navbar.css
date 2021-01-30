@@ -1,0 +1,15 @@
+#navbar {
+  text-align: center;
+  padding: 8px;
+}
+
+.back-icon {
+  font-size: 1.1em;
+  font-weight: bold;
+  clear: both;
+  float: left;
+}
+
+.nav-title {
+  color: #736e65;
+}

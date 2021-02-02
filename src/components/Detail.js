@@ -2,20 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Detail = props => {
-  const { id, num, detail } = props;
+  const { detailName, detail } = props;
 
   return (
     <div className="detail">
-      This is an Item {id}&#39;s Detail {num}.
-      <p>Info: {detail}</p>
+      <h2>{detailName}:</h2>
+      <p>{detail}</p>
     </div>
   );
 };
 
 Detail.propTypes = {
-  id: PropTypes.number.isRequired,
-  num: PropTypes.number.isRequired,
-  detail: PropTypes.string.isRequired,
+  detailName: PropTypes.isRequired,
+  detail: PropTypes.isRequired,
 };
 
 export default Detail;

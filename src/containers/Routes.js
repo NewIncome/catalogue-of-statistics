@@ -11,7 +11,7 @@ const Routes = () => {
     const renderItemId = parseInt(routerProps.match.params.id, 10);
     const foundItem = items.find(i => i.id === renderItemId);
 
-    return (foundItem ? <Details itemNo={renderItemId} /> : <Error />);
+    return (foundItem ? <Details itemNo={renderItemId} hdName={foundItem.name} /> : <Error />);
   };
 
   return (

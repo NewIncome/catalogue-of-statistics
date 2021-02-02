@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Detail from '../components/Detail';
 import { getItemDetails } from '../utils';
+import '../styles/itemList.css';
 
 const ItemDetails = props => {
   const { id } = props;
@@ -9,12 +10,11 @@ const ItemDetails = props => {
 
   return (
     <section id="item-details">
-      {details.map((detail, i) => (
+      {details.map(detail => (
         <Detail
           key={`detailNo${id}`}
-          id={id}
-          num={i}
-          detail={detail.detail}
+          detailName={Object.keys(detail)}
+          detail={Object.values(detail)}
         />
       ))}
     </section>

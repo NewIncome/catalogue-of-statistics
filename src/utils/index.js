@@ -71,11 +71,7 @@ const getItemDetails = id => {
   console.log('found');
   console.log(found);
 
-  return [
-    { detail: found[0].detail1 },
-    { detail: found[1].detail2 },
-    { detail: found[2].detail3 },
-  ];
+  return found;
 };
 
 export { items, getItemDetails };

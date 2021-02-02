@@ -29,7 +29,7 @@ const items = [
     ],
   },
   {
-    name: 'item3',
+    name: 'item4',
     id: 4,
     details: [
       { detail1: 'it4-dt1' },
@@ -38,7 +38,7 @@ const items = [
     ],
   },
   {
-    name: 'item3',
+    name: 'item5',
     id: 5,
     details: [
       { detail1: 'it5-dt1' },
@@ -47,7 +47,7 @@ const items = [
     ],
   },
   {
-    name: 'item3',
+    name: 'item6',
     id: 6,
     details: [
       { detail1: 'it6-dt1' },
@@ -56,7 +56,7 @@ const items = [
     ],
   },
   {
-    name: 'item3',
+    name: 'item7',
     id: 7,
     details: [
       { detail1: 'it7-dt1' },

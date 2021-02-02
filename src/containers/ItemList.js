@@ -17,7 +17,7 @@ const ItemList = ({ items: initialItems }) => {
             to={`/details/${item.id}`}
             className="item-link"
           >
-            <Item key={item.id} name={item.name} />
+            <Item key={item.id} name={item.name} id={item.id} />
           </Link>
         </div>
       ))}

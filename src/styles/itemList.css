@@ -3,15 +3,30 @@
   flex-wrap: wrap;
   overflow-y: scroll;
   height: 646px;
+  scrollbar-width: none;
 }
 
 .item {
   width: 50%;
   border: 1px solid #aaa;
   height: 220px;
+  background: linear-gradient(130deg, #6060ff, #8e8eff);
 }
+
+/* .item:nth-child(2n) { background-color: #6666ff; }
+
+.item:nth-child(2n+1) { background-color: #7c7cff; }
+
+.item:nth-child(3n+4) { color: #fff; } */
+
+/* .item:nth-child(-3n+5) { background-color: #6666ff; } */
 
 .item-link {
   display: block;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-end;
+  padding: 0 20px 20px 0;
 }

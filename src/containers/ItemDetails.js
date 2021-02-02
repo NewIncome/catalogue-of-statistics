@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Detail from '../components/Detail';
 import { getItemDetails } from '../utils';
-import '../styles/itemList.css';
+import '../styles/itemDetails.css';
 
 const ItemDetails = props => {
   const { id } = props;

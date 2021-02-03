@@ -62,7 +62,7 @@ const Home = () => {
     <>
       <Navbar backLink="/" />
       <Header title="Statistics Catalogue" />
-      <div>Please search for a </div>
+      <div className="page-desc">Please search for a </div>
       <form className="form" action="/items">
         <input
           name="co"

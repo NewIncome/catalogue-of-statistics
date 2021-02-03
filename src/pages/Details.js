@@ -11,7 +11,7 @@ const Details = props => {
     <>
       <Navbar backLink="/items" />
       <Header title={hdName} />
-      <div>List of <u>Details</u></div>
+      <div className="page-desc">List of <u>Details</u></div>
       <ItemDetails sym={itemSym} />
     </>
   );

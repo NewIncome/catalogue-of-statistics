@@ -8,7 +8,7 @@ const Items = () => (
   <>
     <Navbar backLink="/" />
     <Header title="ITEMS search result" />
-    <div>Stats by ...</div>
+    <div className="page-desc">Stats by ...</div>
     <ItemList items={initialItems} />
   </>
 );

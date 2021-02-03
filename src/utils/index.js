@@ -1,6 +1,6 @@
-/* eslint-disable import/prefer-default-export */
+/* eslint-disable import/prefer-default-export, import/no-mutable-exports */
 
-const items = [
+let items = [
   {
     name: 'item1',
     id: 1,
@@ -74,4 +74,15 @@ const getItemDetails = id => {
   return found;
 };
 
-export { items, getItemDetails };
+const getAPIjson = () => fetch('https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=demo');
+
+const updateItems = val => {
+  items = [val];
+};
+
+export {
+  items,
+  getItemDetails,
+  getAPIjson,
+  updateItems,
+};

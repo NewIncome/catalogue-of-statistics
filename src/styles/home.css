@@ -1,3 +1,11 @@
-#input {
-  color: #000;
+.form {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#input { color: #000; }
+
+.btn {
+  background: #aaa;
+  padding: 6px;
 }

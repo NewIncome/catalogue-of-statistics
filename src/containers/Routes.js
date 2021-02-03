@@ -13,7 +13,13 @@ const Routes = () => {
     console.log(routerProps);
     const foundItem = items.find(i => i.symbol === renderItemSymbol);
 
-    return (foundItem ? <Details itemSym={renderItemSymbol} hdName={foundItem.name} /> : <Error />);
+    return (foundItem ? (
+      <Details
+        itemSym={renderItemSymbol}
+        hdName={foundItem.name}
+        itemInfo={foundItem.marketCap}
+      />
+    ) : <Error />);
   };
 
   return (

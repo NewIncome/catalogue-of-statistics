@@ -24,5 +24,6 @@
 
 .detail-p {
   max-width: 35%;
+  text-align: right;
   word-wrap: break-word;
 }

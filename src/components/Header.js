@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '../styles/header.css';
 
 const Header = props => {
-  const { title } = props;
+  const { title, titleInfo } = props;
 
   return (
     <header id="header">
@@ -12,7 +12,7 @@ const Header = props => {
       </div>
       <div className="header-info h-i">
         <h2 className="header-title">{title}</h2>
-        <p className="header-detail">header detail</p>
+        <p className="header-detail">{titleInfo}</p>
       </div>
     </header>
   );
@@ -20,6 +20,7 @@ const Header = props => {
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,
+  titleInfo: PropTypes.isRequired,
 };
 
 export default Header;

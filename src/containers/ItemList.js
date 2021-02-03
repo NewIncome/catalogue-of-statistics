@@ -11,13 +11,13 @@ const ItemList = ({ items: initialItems }) => {
   return (
     <section id="item-list">
       {items.map(item => (
-        <div className="item" key={`div${item.id}`}>
+        <div className="item" key={`div${item.symbol}`}>
           <Link
-            key={item.id}
-            to={`/details/${item.id}`}
+            key={item.symbol}
+            to={`/details/${item.symbol}`}
             className="item-link"
           >
-            <Item key={item.id} name={item.name} id={item.id} />
+            <Item key={item.symbol} name={item.name} id={item.symbol} />
           </Link>
         </div>
       ))}

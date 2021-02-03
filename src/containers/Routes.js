@@ -8,10 +8,12 @@ import Details from '../pages/Details';
 
 const Routes = () => {
   const renderItems = routerProps => {
-    const renderItemId = parseInt(routerProps.match.params.id, 10);
-    const foundItem = items.find(i => i.id === renderItemId);
+    const renderItemSymbol = routerProps.match.params.symbol;
+    console.log('routerProps');
+    console.log(routerProps);
+    const foundItem = items.find(i => i.symbol === renderItemSymbol);
 
-    return (foundItem ? <Details itemNo={renderItemId} hdName={foundItem.name} /> : <Error />);
+    return (foundItem ? <Details itemSym={renderItemSymbol} hdName={foundItem.name} /> : <Error />);
   };
 
   return (
@@ -19,7 +21,7 @@ const Routes = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/items" component={Items} />
-        <Route path="/details/:id" render={renderItems} />
+        <Route path="/details/:symbol" render={renderItems} />
         <Route component={Error} />
       </Switch>
     </BrowserRouter>

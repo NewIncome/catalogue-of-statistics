@@ -5,20 +5,20 @@ import Navbar from '../components/Navbar';
 import ItemDetails from '../containers/ItemDetails';
 
 const Details = props => {
-  const { itemNo, hdName } = props;
+  const { itemSym, hdName } = props;
 
   return (
     <>
       <Navbar backLink="/items" />
       <Header title={hdName} />
       <div>List of <u>Details</u></div>
-      <ItemDetails id={itemNo} />
+      <ItemDetails sym={itemSym} />
     </>
   );
 };
 
 Details.propTypes = {
-  itemNo: PropTypes.number.isRequired,
+  itemSym: PropTypes.number.isRequired,
   hdName: PropTypes.isRequired,
 };
 

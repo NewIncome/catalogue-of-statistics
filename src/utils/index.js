@@ -66,12 +66,15 @@ let items = [
   },
 ];
 
-const getItemDetails = id => {
-  const found = items.find(item => item.id === id).details;
+const getItemDetails = symbol => {
+  console.log('symbol');
+  console.log(symbol);
+  console.log(items);
+  const found = items.find(item => item.symbol === symbol);
   console.log('found');
   console.log(found);
 
-  return found;
+  return [found];
 };
 
 const getAPIjson = () => fetch('https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=demo');

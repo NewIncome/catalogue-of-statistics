@@ -6,8 +6,8 @@ const Detail = props => {
 
   return (
     <div className="detail">
-      <h2>{detailName}</h2>
-      <p>{detail}</p>
+      <h2 className="detail-name">{detailName}</h2>
+      <p className="detail-p">{detail}</p>
     </div>
   );
 };

@@ -7,5 +7,10 @@
 
 .btn {
   background: #aaa;
-  padding: 6px;
+  padding: 10px;
+}
+
+.searching {
+  padding-top: 30px;
+  text-align: center;
 }

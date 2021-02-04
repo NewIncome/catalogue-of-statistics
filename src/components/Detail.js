@@ -7,7 +7,7 @@ const Detail = props => {
   return (
     <div className="detail">
       <h2 className="detail-name">{detailName}</h2>
-      <p className="detail-p">{detail}</p>
+      <p className="detail-p">{detail || '-'}</p>
     </div>
   );
 };

@@ -6,12 +6,11 @@ import ItemDetails from '../containers/ItemDetails';
 
 const Details = props => {
   const { itemSym, hdName, itemInfo } = props;
-  const fixedInfo = (itemInfo / 1000000000000).toFixed(1);
 
   return (
     <>
       <Navbar backLink="/items" />
-      <Header title={hdName} titleInfo={`${fixedInfo}B`} />
+      <Header title={hdName} titleInfo={`${itemInfo} details`} />
       <div className="page-desc">List of <u>Details</u></div>
       <ItemDetails sym={itemSym} />
     </>

@@ -7,6 +7,8 @@ import '../styles/itemList.css';
 
 const ItemList = ({ items: initialItems }) => {
   const [items, setItems] = useState(initialItems);
+  console.log('ItemsList items');
+  console.log(items);
 
   return (
     <section id="item-list">
@@ -17,7 +19,7 @@ const ItemList = ({ items: initialItems }) => {
             to={`/details/${item.symbol}`}
             className="item-link"
           >
-            <Item key={item.symbol} name={item.name} id={item.symbol} />
+            <Item key={item.symbol} name={item.name || 'Unregistered'} id={item.symbol} />
           </Link>
         </div>
       ))}

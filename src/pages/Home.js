@@ -14,7 +14,7 @@ const Home = () => {
   const searchAPI = event => {
     event.preventDefault();
 
-    const call = getAPIjson();
+    const call = getAPIjson(company);
 
     setStateAPI('pending');
 
@@ -22,7 +22,7 @@ const Home = () => {
       .then(data => {
         console.log('Finally the data');
         console.log(data);
-        updateItems(data[0]);
+        updateItems(data);
 
         setStateAPI('resolved');
       });

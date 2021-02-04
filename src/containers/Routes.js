@@ -11,13 +11,15 @@ const Routes = () => {
     const renderItemSymbol = routerProps.match.params.symbol;
     console.log('routerProps');
     console.log(routerProps);
+    console.log('Routes items');
+    console.log(items);
     const foundItem = items.find(i => i.symbol === renderItemSymbol);
 
     return (foundItem ? (
       <Details
         itemSym={renderItemSymbol}
         hdName={foundItem.name}
-        itemInfo={foundItem.marketCap}
+        itemInfo={Object.keys(foundItem).length}
       />
     ) : <Error />);
   };

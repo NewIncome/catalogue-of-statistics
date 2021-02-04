@@ -77,10 +77,13 @@ const getItemDetails = symbol => {
   return [found];
 };
 
-const getAPIjson = () => fetch('https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=demo');
+const getAPIjson = search => fetch(`https://financialmodelingprep.com/api/v3/search?query=${search}&limit=25&apikey=${process.env.REACT_APP_API_KEY}`);
 
 const updateItems = val => {
-  items = [val];
+  items = val;
+  console.log('Update items');
+  console.log(val);
+  console.log(items);
 };
 
 export {

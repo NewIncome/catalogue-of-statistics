@@ -1,22 +1,31 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { items, getAPIjson, updateItems } from '../utils';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
 import Searching from '../components/Searching';
 import '../styles/home.css';
+import { addQuery, setAPIstatus } from '../actions';
 
-const Home = () => {
-  const [company, setCompany] = useState('');
-  const [stateAPI, setStateAPI] = useState('');
+const Home = props => {
+  const {
+    query,
+    status,
+    addQuery,
+    setAPIstatus,
+  } = props;
+  // const [company, setCompany] = useState('');
+  // const [stateAPI, setStateAPI] = useState('');
 
   const searchAPI = event => {
     event.preventDefault();
 
-    const call = getAPIjson(company);
+    const call = getAPIjson(query);
 
-    setStateAPI('pending');
+    setAPIstatus('pending');
 
     call.then(resp => resp.json())
       .then(data => {
@@ -24,23 +33,23 @@ const Home = () => {
         console.log(data);
         updateItems(data);
 
-        setStateAPI('resolved');
+        setAPIstatus('resolved');
       });
 
     call.catch(err => {
       console.log('Error:');
       console.log(err);
 
-      setStateAPI('rejected');
+      setAPIstatus('rejected');
     });
   };
 
-  const handleChange = event => setCompany(event.target.value);
+  const handleChange = event => addQuery(event.target.value);
 
   useEffect(() => {
-  }, [stateAPI]);
+  }, [status]);
 
-  if (stateAPI === 'pending') {
+  if (status === 'pending') {
     return (
       <>
         <Navbar backLink="/" />
@@ -49,12 +58,12 @@ const Home = () => {
       </>
     );
   }
-  if (stateAPI === 'resolved') {
+  if (status === 'resolved') {
     console.log('Response Data');
     console.log(items);
     return <Redirect to="/items" searchResult={items} />;
   }
-  if (stateAPI === 'rejected') {
+  if (status === 'rejected') {
     return <Redirect to="/error" />;
   }
 
@@ -68,7 +77,7 @@ const Home = () => {
           id="input"
           type="text"
           placeholder="Enter a Company name"
-          value={company}
+          value={query}
           onChange={handleChange}
         />
         <button
@@ -79,8 +88,29 @@ const Home = () => {
           Enter
         </button>
       </form>
+      {console.log('S T A T E: query & status')}
+      {console.log(query, status)}
     </>
   );
 };
 
-export default Home;
+// Send/Ask4 the parts of state that you need
+const mapState = ({ query, status }) => ({ query, status });
+
+// Dispatch the actions to be used against state
+const mapDispatchToProps = dispatch => ({
+  addQuery: query => dispatch(addQuery(query)),
+  setAPIstatus: status => dispatch(setAPIstatus(status)),
+});
+
+// console.log('MapState ToProps');
+// console.log(mapState);
+
+Home.propTypes = {
+  query: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
+  addQuery: PropTypes.func.isRequired,
+  setAPIstatus: PropTypes.func.isRequired,
+};
+
+export default connect(mapState, mapDispatchToProps)(Home);

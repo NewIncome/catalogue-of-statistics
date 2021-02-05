@@ -6,14 +6,14 @@ import {
   FILTERED_ITEMS,
 } from './types';
 
-const setAPIstatus = respAPI => ({
-  type: SET_API_STATUS,
-  payload: respAPI,
-});
-
 const addQuery = query => ({
   type: ADD_QUERY,
   payload: query,
+});
+
+const setAPIstatus = respAPI => ({
+  type: SET_API_STATUS,
+  payload: respAPI,
 });
 
 const addItems = items => ({
@@ -32,5 +32,5 @@ const filteredItems = itemsFiltered => ({
 });
 
 export {
-  setAPIstatus, addQuery, addItems, updateFilter, filteredItems,
+  addQuery, setAPIstatus, addItems, updateFilter, filteredItems,
 };

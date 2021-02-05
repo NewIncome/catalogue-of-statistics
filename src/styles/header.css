@@ -10,6 +10,10 @@
   width: 50%;
 }
 
+.header-img {
+  background: linear-gradient(#8585ff36, #8585ffba), url(https://media.istockphoto.com/vectors/abstract-business-chart-on-dark-blue-background-vector-id611186478?k=6&m=611186478&s=612x612&w=0&h=VVa6RSdHS6YfXz6ad_3S_wqbCCfp5EgqD2tGAWj9vUA=) no-repeat center center/cover;
+}
+
 .header-info {
   padding: 8% 0 0 5%;
   overflow: hidden;

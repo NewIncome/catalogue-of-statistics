@@ -7,9 +7,7 @@ const Header = props => {
 
   return (
     <header id="header">
-      <div className="header-img h-i">
-        <img src="country" alt="Item" />
-      </div>
+      <div className="header-img h-i" />
       <div className="header-info h-i">
         <h2 className="header-title">{title}</h2>
         <p className="header-detail">{titleInfo}</p>

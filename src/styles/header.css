@@ -2,6 +2,7 @@
   display: flex;
   background-color: #8585ff;
   height: 150px;
+  width: 100%;
 }
 
 .h-i {
@@ -9,4 +10,7 @@
   width: 50%;
 }
 
-.header-info { padding: 8% 0 0 5%; }
+.header-info {
+  padding: 8% 0 0 5%;
+  overflow: hidden;
+}

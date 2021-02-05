@@ -1,9 +1,17 @@
+#selectFilter {
+  background: transparent;
+  border: none;
+  margin-left: 5px;
+  font-size: 1em;
+}
+
 #item-list {
   display: flex;
   flex-wrap: wrap;
   overflow-y: scroll;
-  height: 646px;
+  height: 636px;
   scrollbar-width: none;
+  align-content: baseline;
 }
 
 .item {
@@ -32,6 +40,7 @@
 }
 
 .item-title {
+  text-align: end;
   word-wrap: break-word;
   width: 100%;
 }

@@ -9,7 +9,7 @@ const Details = props => {
 
   return (
     <>
-      <Navbar backLink="/items" />
+      <Navbar backLink="/items" title="Company Stats" />
       <Header title={hdName} titleInfo={`${itemInfo} details`} />
       <div className="page-desc">List of <u>Details</u></div>
       <ItemDetails sym={itemSym} />

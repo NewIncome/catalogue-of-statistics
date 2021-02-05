@@ -86,9 +86,35 @@ const updateItems = val => {
   console.log(items);
 };
 
+const populateFilterOptions = items => {
+  const op = { currency: [], stockExchange: [] };
+  items.forEach(({ currency, stockExchange }) => {
+    if (currency && !op.currency.includes(currency)) {
+      op.currency.push(currency);
+    }
+    if (stockExchange && !op.stockExchange.includes(stockExchange)) {
+      op.stockExchange.push(stockExchange);
+    }
+  });
+  console.log('FilteredObject');
+  console.log(op);
+
+  return op;
+};
+
+const filterItems = filter => {
+  console.log('FILTER');
+  console.log(filter);
+  const [fltr, value] = filter.split(',');
+  console.log(items.filter(item => item[fltr] === value));
+  return items.filter(item => item[fltr] === value);
+};
+
 export {
   items,
   getItemDetails,
   getAPIjson,
   updateItems,
+  populateFilterOptions,
+  filterItems,
 };

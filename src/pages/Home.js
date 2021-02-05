@@ -24,14 +24,14 @@ const Home = () => {
         console.log(data);
         updateItems(data);
 
-        setStateAPI('resolved');
+        // setStateAPI('resolved');
       });
 
     call.catch(err => {
       console.log('Error:');
       console.log(err);
 
-      setStateAPI('rejected');
+      // setStateAPI('rejected');
     });
   };
 
@@ -60,7 +60,7 @@ const Home = () => {
 
   return (
     <>
-      <Navbar backLink="/" />
+      <Navbar backLink="/" title="Query Co" />
       <Header title="Statistics Catalogue" />
       <form className="form" action="/items">
         <input

@@ -5,10 +5,20 @@ import PropTypes from 'prop-types';
 import Item from '../components/Item';
 import '../styles/itemList.css';
 
-const ItemList = ({ items: initialItems }) => {
-  const [items, setItems] = useState(initialItems);
+const ItemList = props => {
+  const { itemsProp } = props;
+  console.log('itemsProp');
+  console.log(itemsProp);
+  const [items, setItems] = useState(itemsProp);
   console.log('ItemsList items');
   console.log(items);
+
+  const updateItems = () => setItems(itemsProp);
+
+  useEffect(() => {
+    console.log('...Checking for changes...');
+    updateItems();
+  }, [itemsProp]);
 
   return (
     <section id="item-list">
@@ -28,7 +38,7 @@ const ItemList = ({ items: initialItems }) => {
 };
 
 ItemList.propTypes = {
-  items: PropTypes.isRequired,
+  itemsProp: PropTypes.isRequired,
 };
 
 export default ItemList;

@@ -24,14 +24,14 @@ const Home = () => {
         console.log(data);
         updateItems(data);
 
-        // setStateAPI('resolved');
+        setStateAPI('resolved');
       });
 
     call.catch(err => {
       console.log('Error:');
       console.log(err);
 
-      // setStateAPI('rejected');
+      setStateAPI('rejected');
     });
   };
 

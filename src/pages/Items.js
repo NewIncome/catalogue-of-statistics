@@ -1,16 +1,22 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
-import { items as initialItems, populateFilterOptions, filterItems } from '../utils';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { populateFilterOptions, filterItems } from '../utils';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
 import ItemList from '../containers/ItemList';
 // import Select from '../components/ParameterFilter';
 
-const Items = () => {
-  const [filter, setFilter] = useState('');
-  const [newItems, setNewItems] = useState(initialItems);
+const Items = props => {
+  const { items } = props;
+  console.log('ITEMS in Items');
+  console.log(items);
 
-  const options = populateFilterOptions(initialItems);
+  const [filter, setFilter] = useState('');
+  const [newItems, setNewItems] = useState(items);
+
+  const options = populateFilterOptions(items);
   console.log('ITEMS OPTIONS');
   console.log(options);
 
@@ -19,7 +25,7 @@ const Items = () => {
   useEffect(() => {
     console.log(filter);
     console.log(typeof filter);
-    setNewItems(filter === '' ? initialItems : filterItems(filter));
+    setNewItems(filter === '' ? items : filterItems(filter));
 
     console.log('ITEMS TO SHOW (newItems)');
     console.log(newItems);
@@ -53,4 +59,10 @@ const Items = () => {
   );
 };
 
-export default Items;
+const mapState = ({ items }) => ({ items });
+
+Items.propTypes = {
+  items: PropTypes.isRequired,
+};
+
+export default connect(mapState)(Items);

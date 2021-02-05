@@ -3,12 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { items, getAPIjson, updateItems } from '../utils';
+import { getAPIjson } from '../utils';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
 import Searching from '../components/Searching';
 import '../styles/home.css';
-import { addQuery, setAPIstatus } from '../actions';
+import { addQuery, setAPIstatus, addItems } from '../actions';
 
 const Home = props => {
   const {
@@ -16,9 +16,9 @@ const Home = props => {
     status,
     addQuery,
     setAPIstatus,
+    items,
+    addItems,
   } = props;
-  // const [company, setCompany] = useState('');
-  // const [stateAPI, setStateAPI] = useState('');
 
   const searchAPI = event => {
     event.preventDefault();
@@ -31,7 +31,9 @@ const Home = props => {
       .then(data => {
         console.log('Finally the data');
         console.log(data);
-        updateItems(data);
+        addItems(data);
+        console.log('Did items update???');
+        console.log(items);
 
         setAPIstatus('resolved');
       });
@@ -95,12 +97,18 @@ const Home = props => {
 };
 
 // Send/Ask4 the parts of state that you need
-const mapState = ({ query, status }) => ({ query, status });
+const mapState = ({ query, status, items }) => (
+  {
+    query,
+    status,
+    items,
+  });
 
 // Dispatch the actions to be used against state
 const mapDispatchToProps = dispatch => ({
   addQuery: query => dispatch(addQuery(query)),
   setAPIstatus: status => dispatch(setAPIstatus(status)),
+  addItems: items => dispatch(addItems(items)),
 });
 
 // console.log('MapState ToProps');
@@ -109,8 +117,10 @@ const mapDispatchToProps = dispatch => ({
 Home.propTypes = {
   query: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
+  items: PropTypes.isRequired,
   addQuery: PropTypes.func.isRequired,
   setAPIstatus: PropTypes.func.isRequired,
+  addItems: PropTypes.func.isRequired,
 };
 
 export default connect(mapState, mapDispatchToProps)(Home);

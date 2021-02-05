@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export, import/no-mutable-exports */
 
-let items = [
+const items = [
   {
     name: 'item1',
     id: 1,
@@ -66,11 +66,11 @@ let items = [
   },
 ];
 
-const getItemDetails = symbol => {
+const getItemDetails = (symbol, iTems) => {
   console.log('symbol');
   console.log(symbol);
-  console.log(items);
-  const found = items.find(item => item.symbol === symbol);
+  console.log(iTems);
+  const found = iTems.find(item => item.symbol === symbol);
   console.log('found');
   console.log(found);
 
@@ -79,12 +79,12 @@ const getItemDetails = symbol => {
 
 const getAPIjson = search => fetch(`https://financialmodelingprep.com/api/v3/search?query=${search}&limit=40&apikey=${process.env.REACT_APP_API_KEY}`);
 
-const updateItems = val => {
-  items = val;
-  console.log('Update items');
-  console.log(val);
-  console.log(items);
-};
+// const updateItems = val => {
+//   items = val;
+//   console.log('Update items');
+//   console.log(val);
+//   console.log(items);
+// };
 
 const populateFilterOptions = items => {
   const op = { currency: [], stockExchange: [] };
@@ -114,7 +114,7 @@ export {
   items,
   getItemDetails,
   getAPIjson,
-  updateItems,
+  // updateItems,
   populateFilterOptions,
   filterItems,
 };

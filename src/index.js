@@ -6,18 +6,18 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import Routes from './containers/Routes';
-import filterReducer from './reducers/filter';
+import rootReducer from './reducers';
 
-// const store = createStore(
-//   filterReducer,
-//   compose(applyMiddleware(thunk)),
-// );
+const store = createStore(
+  rootReducer,
+  compose(applyMiddleware(thunk)),
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Provider store={store}> */}
-    <Routes />
-    {/* </Provider> */}
+    <Provider store={store}>
+      <Routes />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );

@@ -1,12 +1,16 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Items from '../pages/Items';
 import Home from '../pages/Home';
 import Error from '../pages/Error';
-import { items } from '../utils';
+// import { items } from '../utils';
 import Details from '../pages/Details';
 
-const Routes = () => {
+const Routes = props => {
+  const { items } = props;
+
   const renderItems = routerProps => {
     const renderItemSymbol = routerProps.match.params.symbol;
     console.log('routerProps');
@@ -18,7 +22,7 @@ const Routes = () => {
     return (foundItem ? (
       <Details
         itemSym={renderItemSymbol}
-        hdName={foundItem.name}
+        hdName={foundItem.name || foundItem.symbol}
         itemInfo={Object.keys(foundItem).length}
       />
     ) : <Error />);
@@ -35,4 +39,11 @@ const Routes = () => {
     </BrowserRouter>
   );
 };
-export default Routes;
+
+const mapState = ({ items }) => ({ items });
+
+Routes.propTypes = {
+  items: PropTypes.isRequired,
+};
+
+export default connect(mapState, null)(Routes);

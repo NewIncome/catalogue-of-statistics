@@ -3,7 +3,7 @@ import {
   ADD_QUERY,
   ADD_ITEMS,
   UPDATE_FILTER,
-  FILTERED_ITEMS,
+  FILTER_ITEMS,
 } from './types';
 
 const addQuery = query => ({
@@ -26,11 +26,11 @@ const updateFilter = filter => ({
   payload: filter,
 });
 
-const filteredItems = itemsFiltered => ({
-  type: FILTERED_ITEMS,
-  payload: itemsFiltered,
+const filterItems = qNtoFilter => ({
+  type: FILTER_ITEMS,
+  payload: qNtoFilter,
 });
 
 export {
-  addQuery, setAPIstatus, addItems, updateFilter, filteredItems,
+  addQuery, setAPIstatus, addItems, updateFilter, filterItems,
 };

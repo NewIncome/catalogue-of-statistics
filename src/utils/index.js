@@ -86,9 +86,9 @@ const getAPIjson = search => fetch(`https://financialmodelingprep.com/api/v3/sea
 //   console.log(items);
 // };
 
-const populateFilterOptions = items => {
+const populateFilterOptions = iTems => {
   const op = { currency: [], stockExchange: [] };
-  items.forEach(({ currency, stockExchange }) => {
+  iTems.forEach(({ currency, stockExchange }) => {
     if (currency && !op.currency.includes(currency)) {
       op.currency.push(currency);
     }
@@ -102,12 +102,12 @@ const populateFilterOptions = items => {
   return op;
 };
 
-const filterItems = filter => {
+const filterItems = (filter, iTems) => {
   console.log('FILTER');
   console.log(filter);
   const [fltr, value] = filter.split(',');
-  console.log(items.filter(item => item[fltr] === value));
-  return items.filter(item => item[fltr] === value);
+  console.log(iTems.filter(item => item[fltr] === value));
+  return iTems.filter(item => item[fltr] === value);
 };
 
 export {

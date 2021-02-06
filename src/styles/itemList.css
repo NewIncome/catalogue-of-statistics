@@ -30,7 +30,6 @@
 /* .item:nth-child(-3n+5) { background-color: #6666ff; } */
 
 .item-link {
-  display: block;
   height: 100%;
   display: flex;
   flex-direction: column;

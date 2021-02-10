@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import { populateFilterOptions, filterItems } from '../utils';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
@@ -58,10 +59,10 @@ const Items = props => {
         >
           <option value="">All</option>
           <optgroup label="Currency">
-            {options.currency.map(op => <option value={['currency', op]} key={op}>{op}</option>)}
+            {options.currency.map(op => <option value={['currency', op]} key={`cur-${op}`}>{op}</option>)}
           </optgroup>
           <optgroup label="StockExchange">
-            {options.stockExchange.map(op => <option value={['stockExchange', op]} key={op}>{op}</option>)}
+            {options.stockExchange.map(op => <option value={['stockExchange', op]} key={`sEx${op}`}>{op}</option>)}
           </optgroup>
         </select>
       </div>
@@ -83,4 +84,4 @@ Items.propTypes = {
   updateFilter: PropTypes.func.isRequired,
 };
 
-export default connect(mapState, mapDispatchToProps)(Items);
+export default withRouter(connect(mapState, mapDispatchToProps)(Items));

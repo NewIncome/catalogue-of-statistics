@@ -18,6 +18,8 @@ const Routes = props => {
     console.log('Routes items');
     console.log(items);
     const foundItem = items.find(i => i.symbol === renderItemSymbol);
+    console.log('FOUND Item');
+    console.log(foundItem);
 
     return (foundItem ? (
       <Details

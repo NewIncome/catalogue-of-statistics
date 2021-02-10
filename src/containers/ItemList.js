@@ -22,14 +22,14 @@ const ItemList = props => {
 
   return (
     <section id="item-list">
-      {items.map(item => (
-        <div className="item" key={`div${item.symbol}`}>
+      {items.map((item, i) => (
+        <div className="item" key={`div-${item.symbol || i}`}>
           <Link
-            key={item.symbol}
-            to={`/details/${item.symbol}`}
+            key={`link-${item.symbol || i}`}
+            to={`/details/${item.symbol || i}`}
             className="item-link"
           >
-            <Item key={item.symbol} name={item.name || 'Unregistered'} id={item.symbol} />
+            <Item key={`item-${item.symbol || i}`} name={item.name || 'Unregistered'} id={item.symbol || i} />
           </Link>
         </div>
       ))}

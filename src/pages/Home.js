@@ -117,7 +117,7 @@ const mapDispatchToProps = dispatch => ({
 Home.propTypes = {
   query: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
-  items: PropTypes.isRequired,
+  items: PropTypes.shape().isRequired,
   addQuery: PropTypes.func.isRequired,
   setAPIstatus: PropTypes.func.isRequired,
   addItems: PropTypes.func.isRequired,

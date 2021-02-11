@@ -18,7 +18,7 @@ const setAPIstatus = respAPI => ({
 
 const addItems = items => ({
   type: ADD_ITEMS,
-  payload: items,
+  items,
 });
 
 const updateFilter = filter => ({

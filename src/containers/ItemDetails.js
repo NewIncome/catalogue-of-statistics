@@ -1,17 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Detail from '../components/Detail';
-import { getItemDetails } from '../utils';
 import '../styles/itemDetails.css';
 
 const ItemDetails = props => {
-  const { sym, items } = props;
-  const details = getItemDetails(sym, items)[0];
-  console.log('DETAILs');
-  console.log(details);
-  console.log(sym);
-  console.log(items);
+  const { details } = props;
 
   return (
     <section id="item-details">
@@ -20,7 +13,7 @@ const ItemDetails = props => {
 
         return (
           <Detail
-            key={`detailNo${sym}`}
+            key={`detailNo${details.symbol}`}
             detailName={upcaseDetail}
             detail={details[detailKey]}
           />
@@ -30,11 +23,8 @@ const ItemDetails = props => {
   );
 };
 
-const mapState = ({ items }) => ({ items });
-
 ItemDetails.propTypes = {
-  sym: PropTypes.number.isRequired,
-  items: PropTypes.isRequired,
+  details: PropTypes.shape().isRequired,
 };
 
-export default connect(mapState)(ItemDetails);
+export default ItemDetails;

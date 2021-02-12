@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Redirect, withRouter } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { getAPIjson } from '../utils';
 import Header from '../components/Header';
@@ -29,20 +28,15 @@ const Home = props => {
 
     call.then(resp => resp.json())
       .then(data => {
-        console.log('Finally the data');
-        console.log(data);
         addItems(data);
-        console.log('Did items update???');
-        console.log(items);
 
         setAPIstatus('resolved');
       });
 
     call.catch(err => {
-      console.log('Error:');
-      console.log(err);
-
       setAPIstatus('rejected');
+
+      return err;
     });
   };
 
@@ -61,8 +55,6 @@ const Home = props => {
     );
   }
   if (status === 'resolved') {
-    console.log('Response Data');
-    console.log(items);
     setAPIstatus('');
     return <Redirect to="/items" searchResult={items} />;
   }
@@ -91,13 +83,10 @@ const Home = props => {
           Enter
         </button>
       </form>
-      {console.log('S T A T E: query & status')}
-      {console.log(query, status)}
     </>
   );
 };
 
-// Send/Ask4 the parts of state that you need
 const mapState = ({ query, status, items }) => (
   {
     query,
@@ -105,15 +94,11 @@ const mapState = ({ query, status, items }) => (
     items,
   });
 
-// Dispatch the actions to be used against state
 const mapDispatchToProps = dispatch => ({
   addQuery: query => dispatch(addQuery(query)),
   setAPIstatus: status => dispatch(setAPIstatus(status)),
   addItems: items => dispatch(addItems(items)),
 });
-
-// console.log('MapState ToProps');
-// console.log(mapState);
 
 Home.propTypes = {
   query: PropTypes.string.isRequired,

@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 const Select = props => {
   const { filter, options, onChange } = props;
-  console.log('Select Options');
-  console.log(options);
 
   return (
     <div className="page-desc">
@@ -26,7 +24,7 @@ const Select = props => {
 };
 
 Select.propTypes = {
-  filter: PropTypes.arrayOf(PropTypes.string).isRequired,
+  filter: PropTypes.string.isRequired,
   options: PropTypes.objectOf(PropTypes.any).isRequired,
   onChange: PropTypes.func.isRequired,
 };

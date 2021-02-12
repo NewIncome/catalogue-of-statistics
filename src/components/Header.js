@@ -17,11 +17,12 @@ const Header = props => {
 };
 
 Header.defaultProps = {
+  title: '',
   titleInfo: '',
 };
 
 Header.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   titleInfo: PropTypes.string,
 };
 

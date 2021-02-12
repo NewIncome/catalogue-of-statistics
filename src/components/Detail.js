@@ -12,9 +12,13 @@ const Detail = props => {
   );
 };
 
+Detail.defaultProps = {
+  detail: '',
+};
+
 Detail.propTypes = {
-  detailName: PropTypes.isRequired,
-  detail: PropTypes.isRequired,
+  detailName: PropTypes.string.isRequired,
+  detail: PropTypes.string,
 };
 
 export default Detail;

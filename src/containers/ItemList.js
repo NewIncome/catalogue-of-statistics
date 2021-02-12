@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars, react/no-unused-prop-types */
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -7,17 +6,10 @@ import '../styles/itemList.css';
 
 const ItemList = props => {
   const { itemsProp } = props;
-  console.log('itemsProp');
-  console.log(itemsProp);
   const [items, setItems] = useState(itemsProp);
-  console.log('ItemsList items');
-  console.log(items);
-
-  const updateItems = () => setItems(itemsProp);
 
   useEffect(() => {
-    console.log('...Checking for changes...');
-    updateItems();
+    setItems(itemsProp);
   }, [itemsProp]);
 
   return (
@@ -38,7 +30,7 @@ const ItemList = props => {
 };
 
 ItemList.propTypes = {
-  itemsProp: PropTypes.isRequired,
+  itemsProp: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
 };
 
 export default ItemList;

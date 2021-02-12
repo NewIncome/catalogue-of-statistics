@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -18,11 +17,6 @@ const Items = props => {
     filteredItems,
     filterItems,
   } = props;
-
-  console.log('ITEMS items');
-  console.log(items);
-  console.log(filter);
-  console.log(filteredItems);
 
   const options = populateFilterOptions(items);
 
@@ -53,11 +47,15 @@ const mapDispatchToProps = dispatch => ({
   ) => dispatch(filterItems(filter, items, filteredItems)),
 });
 
+Items.defaultProps = {
+  filteredItems: {},
+};
+
 Items.propTypes = {
   items: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
-  filter: PropTypes.arrayOf(PropTypes.string).isRequired,
+  filter: PropTypes.string.isRequired,
   updateFilter: PropTypes.func.isRequired,
-  filteredItems: PropTypes.objectOf(PropTypes.objectOf(PropTypes.any)).isRequired,
+  filteredItems: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)),
   filterItems: PropTypes.func.isRequired,
 };
 

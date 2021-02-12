@@ -25,8 +25,8 @@ const Details = props => {
 const mapState = ({ items }) => ({ items });
 
 Details.propTypes = {
-  routerProps: PropTypes.shape().isRequired,
-  items: PropTypes.shape().isRequired,
+  routerProps: PropTypes.objectOf(PropTypes.any).isRequired,
+  items: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
 };
 
 export default connect(mapState)(Details);

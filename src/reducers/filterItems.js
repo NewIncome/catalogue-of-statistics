@@ -1,11 +1,9 @@
 /* eslint-disable no-case-declarations */
 import { FILTER_ITEMS } from '../actions/types';
 
-const filterItemsReducer = (state = 'test', action) => {
+const filterItemsReducer = (state = null, action) => {
   switch (action.type) {
     case FILTER_ITEMS:
-      console.log('FILTERitemsReducer Action');
-      console.log(action);
       const { items, filteredItems } = action.payload;
       const [fltr, value] = action.payload.filter.split(',');
 

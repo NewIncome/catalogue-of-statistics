@@ -8,12 +8,12 @@ const ItemDetails = props => {
 
   return (
     <section id="item-details">
-      {Object.keys(details).map(detailKey => {
+      {Object.keys(details).map((detailKey, i) => {
         const upcaseDetail = detailKey[0].toUpperCase() + detailKey.substring(1);
 
         return (
           <Detail
-            key={`detailNo${details.symbol}`}
+            key={`detailNo${details.symbol}-${i + 1}`}
             detailName={upcaseDetail}
             detail={details[detailKey]}
           />

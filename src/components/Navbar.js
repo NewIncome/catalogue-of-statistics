@@ -26,9 +26,13 @@ const Navbar = props => {
   );
 };
 
+Navbar.defaultProps = {
+  title: '',
+};
+
 Navbar.propTypes = {
   backLink: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 };
 
 export default Navbar;

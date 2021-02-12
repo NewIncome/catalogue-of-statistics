@@ -53,24 +53,12 @@ const items = [
 ];
 
 const getItemDetails = (symbol, iTems) => {
-  console.log('symbol');
-  console.log(symbol);
-  console.log(iTems);
   const found = iTems.find(item => item.symbol === symbol);
-  console.log('found');
-  console.log(found);
 
   return [found];
 };
 
 const getAPIjson = search => fetch(`https://financialmodelingprep.com/api/v3/search?query=${search}&limit=40&apikey=${process.env.REACT_APP_API_KEY}`);
-
-// const updateItems = val => {
-//   items = val;
-//   console.log('Update items');
-//   console.log(val);
-//   console.log(items);
-// };
 
 const populateFilterOptions = iTems => {
   const op = { currency: [], stockExchange: [] };
@@ -82,17 +70,13 @@ const populateFilterOptions = iTems => {
       op.stockExchange.push(stockExchange);
     }
   });
-  console.log('FilteredObject');
-  console.log(op);
 
   return op;
 };
 
 const filterItems = (filter, iTems) => {
-  console.log('FILTER');
-  console.log(filter);
   const [fltr, value] = filter.split(',');
-  console.log(iTems.filter(item => item[fltr] === value));
+
   return iTems.filter(item => item[fltr] === value);
 };
 
@@ -100,7 +84,6 @@ export {
   items,
   getItemDetails,
   getAPIjson,
-  // updateItems,
   populateFilterOptions,
   filterItems,
 };

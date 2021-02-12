@@ -27,7 +27,7 @@ const Select = props => {
 
 Select.propTypes = {
   filter: PropTypes.arrayOf(PropTypes.string).isRequired,
-  options: PropTypes.shape().isRequired,
+  options: PropTypes.objectOf(PropTypes.any).isRequired,
   onChange: PropTypes.func.isRequired,
 };
 

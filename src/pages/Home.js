@@ -45,46 +45,40 @@ const Home = props => {
   useEffect(() => {
   }, [status]);
 
-  if (status === 'pending') {
-    return (
-      <>
-        <Navbar backLink="/" />
-        <Header title="Statistics Catalogue" />
-        <Searching />
-      </>
-    );
+  switch (status) {
+    case 'resolved':
+      setAPIstatus('');
+      return <Redirect to="/items" searchResult={items} />;
+    case 'rejected':
+      return <Redirect to="/error" />;
+    default:
+      return (
+        <>
+          <Navbar backLink="/" title="Query Co" />
+          <Header title="Statistics Catalogue" />
+          {status === 'pending' ? <Searching />
+            : (
+              <form className="form" action="/items">
+                <input
+                  name="co"
+                  id="input"
+                  type="text"
+                  placeholder="Enter a Company name"
+                  value={query}
+                  onChange={handleChange}
+                />
+                <button
+                  className="btn"
+                  onClick={searchAPI}
+                  type="submit"
+                >
+                  Enter
+                </button>
+              </form>
+            )}
+        </>
+      );
   }
-  if (status === 'resolved') {
-    setAPIstatus('');
-    return <Redirect to="/items" searchResult={items} />;
-  }
-  if (status === 'rejected') {
-    return <Redirect to="/error" />;
-  }
-
-  return (
-    <>
-      <Navbar backLink="/" title="Query Co" />
-      <Header title="Statistics Catalogue" />
-      <form className="form" action="/items">
-        <input
-          name="co"
-          id="input"
-          type="text"
-          placeholder="Enter a Company name"
-          value={query}
-          onChange={handleChange}
-        />
-        <button
-          className="btn"
-          onClick={searchAPI}
-          type="submit"
-        >
-          Enter
-        </button>
-      </form>
-    </>
-  );
 };
 
 const mapState = ({ query, status, items }) => (

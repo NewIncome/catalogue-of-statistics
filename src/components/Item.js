@@ -12,8 +12,8 @@ const Item = props => {
 };
 
 Item.propTypes = {
-  name: PropTypes.isRequired,
-  id: PropTypes.isRequired,
+  name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default Item;

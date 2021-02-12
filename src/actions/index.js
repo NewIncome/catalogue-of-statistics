@@ -8,27 +8,27 @@ import {
 
 const addQuery = query => ({
   type: ADD_QUERY,
-  payload: query,
+  query,
 });
 
 const setAPIstatus = respAPI => ({
   type: SET_API_STATUS,
-  payload: respAPI,
+  respAPI,
 });
 
 const addItems = items => ({
   type: ADD_ITEMS,
-  items,
+  payload: items,
 });
 
 const updateFilter = filter => ({
   type: UPDATE_FILTER,
-  payload: filter,
+  filter,
 });
 
-const filterItems = qNtoFilter => ({
+const filterItems = (filter, items, filteredItems) => ({
   type: FILTER_ITEMS,
-  payload: qNtoFilter,
+  payload: { filter, items, filteredItems },
 });
 
 export {

@@ -1,14 +1,16 @@
+/* eslint-disable no-case-declarations */
 import { FILTER_ITEMS } from '../actions/types';
 
-const filterItemsReducer = (state = '', action) => {
-  const [fltr, value] = action.payload.split(',');
-
+const filterItemsReducer = (state = 'test', action) => {
   switch (action.type) {
     case FILTER_ITEMS:
-      console.log('FILTER');
-      console.log(action.payload);
-      console.log(action.payload.items.filter(item => item[fltr] === value));
-      return action.payload.items.filter(item => item[fltr] === value);
+      console.log('FILTERitemsReducer Action');
+      console.log(action);
+      const { items, filteredItems } = action.payload;
+      const [fltr, value] = action.payload.filter.split(',');
+
+      console.log(filteredItems);
+      return items.filter(item => item[fltr] === value);
     default:
       return state;
   }

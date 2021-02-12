@@ -63,6 +63,7 @@ const Home = props => {
   if (status === 'resolved') {
     console.log('Response Data');
     console.log(items);
+    setAPIstatus('');
     return <Redirect to="/items" searchResult={items} />;
   }
   if (status === 'rejected') {
@@ -117,7 +118,7 @@ const mapDispatchToProps = dispatch => ({
 Home.propTypes = {
   query: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
-  items: PropTypes.shape().isRequired,
+  items: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
   addQuery: PropTypes.func.isRequired,
   setAPIstatus: PropTypes.func.isRequired,
   addItems: PropTypes.func.isRequired,

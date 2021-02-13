@@ -1,10 +1,19 @@
+# Catalogue of Statistics
+This is a WebbApp simulating a phone app to search for company statisctics via an API call to [financialmodelingprep](https://financialmodelingprep.com/). Coded mainly with React and Redux.
+Built according to [Microverse's requirements](https://www.notion.so/Catalogue-of-Statistics-72446e7fa33c403a9b6a0bc1de5c6cf5#ae194b0436a64e19bcc7ba295302118a).
+
+<div style="text-align: center;">
+<img src="src/assets/S-C_01.png" alt="image" style="zoom: 33%;" />
+<img src="src/assets/S-C_02.png" alt="image" style="zoom: 33%;" />
+<img src="src/assets/S-C_03.png" alt="image" style="zoom: 33%;" />
+</div>
+
 ## Links
 [GitHub Repo](https://github.com/NewIncome/catalogue-of-statistics)
-[:globe_with_meridians::computer: Heroku Livelink]( https://statistics-catalogue.herokuapp.com/) 
+[:globe_with_meridians::computer: Heroku Livelink](https://statistics-catalogue.herokuapp.com/)
 
-[Trello Organization diagram](https://trello.com/b/L44sXU3e/reactredux-capstone)
+## Built With 
 
-## Built With• 
 - REACT
 - REDUX
 - JavaScript (ES6)
@@ -12,75 +21,44 @@
 - HTML5
 - CSS
 
+## Getting Started
 
+In order to start with this project you need the next:
 
-# Getting Started with Create React App
+1. Get a copy of this project [this repository :blue_book:](https://github.com/NewIncome/catalogue-of-statistics)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Once you have cloned this project
+1. Go to project folder
+2. run `npm install` or `yarn install`
+3. run `npm start`
 
-## Available Scripts
+### Usage
 
-In the project directory, you can run:
+- Enter the **Name** of a company you wish check it's stats, for a list of companies that have that name or those letters i it's name
+- Click on the **Company item** you like to see it's details/stats
+- You can additionally Select filter to view less companies, either by **currency** or by **stockExchange**
 
-### `yarn start`
+## Improvements
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Features pending to add to this app:
+- add images relevant to each company via another API
+- add improved UI with CSS
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Author
+👤 **Jose Alfredo Cardenas**
 
-### `yarn test`
+- Github: [@Jose Alfredo](https://github.com/NewIncome)
+- Twitter: [@J_A_fredo](https://twitter.com/J_A_fredo)
+- LinkedIn: [Jose Alfredo Cardenas](https://www.linkedin.com/in/j-alfredo-c/)  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🤝 Contributing
 
-### `yarn build`
+Contributions, issues, and feature requests are welcome!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Show your support
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+If you got until here, show your love hitting the ⭐️ button, greatly appreciated.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📝 License
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT

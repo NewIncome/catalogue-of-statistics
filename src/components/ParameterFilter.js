@@ -6,7 +6,11 @@ const Select = props => {
 
   return (
     <div className="page-desc">
-      <span>Stats by {filter.split(',')[0] || filter}:</span>
+      <span>
+        Stats by
+        {filter.split(',')[0] || filter}
+        :
+      </span>
       <select
         id="selectFilter"
         onChange={onChange}

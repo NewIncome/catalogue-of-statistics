@@ -16,7 +16,10 @@ const Details = props => {
     <>
       <Navbar backLink="/items" title="Company Stats" />
       <Header title={details.name} titleInfo={`${Object.keys(details).length} details`} />
-      <div className="page-desc">List of <u>Details</u></div>
+      <div className="page-desc">
+        List of
+        <u>Details</u>
+      </div>
       <ItemDetails details={details} />
     </>
   );

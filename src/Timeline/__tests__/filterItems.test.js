@@ -17,13 +17,13 @@ const action = {
   type: 'FILTER_ITEMS',
   payload: {
     items: [item1, item2],
-    filter: "",
+    filter: '',
   },
 };
 
 describe('A Filter Reducer', () => {
   test('can show all the elements', () => {
-    const response = filterItemsReducer('', action)
+    const response = filterItemsReducer('', action);
     expect(response).toEqual([item1, item2]);
   });
 

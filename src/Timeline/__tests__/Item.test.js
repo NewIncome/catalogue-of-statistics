@@ -21,11 +21,11 @@ describe('Item component', () => {
 
   test('has a h2 element', () => {
     const tree = renderer.create(<Item name="name" id="" />).root;
-    expect(tree.findByProps({className: "item-title"}).children).toEqual(['name']);
+    expect(tree.findByProps({ className: 'item-title' }).children).toEqual(['name']);
   });
 
   test('has a P element', () => {
     const tree = renderer.create(<Item name="" id="123" />).root;
-    expect(tree.findByProps({className: "item-dit"}).children).toEqual(['123']);
+    expect(tree.findByProps({ className: 'item-dit' }).children).toEqual(['123']);
   });
 });

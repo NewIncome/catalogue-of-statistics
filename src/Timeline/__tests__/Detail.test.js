@@ -1,26 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Provider } from 'react-redux';
-import configureStore from 'redux-mock-store';
-import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Detail from '../../components/Detail';
-
-// const initialState = {
-//   query: '',
-//   status: '',
-//   items: {},
-//   filter: '',
-//   filteredItems: {},
-// };
-
-// const mockStore = configureStore();
-// const store = mockStore(initialState);
 
 describe('Detail component', () => {
   test('is displayed correctly', () => {
     const tree = renderer.create(<Detail detailName='' />);
-    console.log(tree.root.props); // { detail: '' }
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
@@ -44,9 +29,3 @@ describe('Detail component', () => {
     expect(tree.findByProps({className: "detail-p"}).children).toEqual(['-']);
   });
 });
-
-// describe('', () => {});
-// "detail-p"  = '-'
-
-// to reset the snapshot, run:
-// npm test -- -u

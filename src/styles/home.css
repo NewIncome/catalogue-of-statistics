@@ -1,0 +1,16 @@
+.form {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#input { color: #000; }
+
+.btn {
+  background: #aaa;
+  padding: 10px;
+}
+
+.searching {
+  padding-top: 30px;
+  text-align: center;
+}

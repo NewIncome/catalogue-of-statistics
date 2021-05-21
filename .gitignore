@@ -7,6 +7,7 @@
 
 # testing
 /coverage
+src/Timeline/__tests__/__snapshots__/
 
 # production
 /build

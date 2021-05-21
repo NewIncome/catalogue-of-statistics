@@ -1,0 +1,29 @@
+#item-details {
+  overflow-y: scroll;
+  height: 646px;
+  scrollbar-width: none;
+}
+
+.detail {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.detail:nth-child(even) { background-color: #6060ff; }
+
+.detail:nth-child(odd) { background-color: #7b7bf7; }
+
+.detail-name {
+  font-size: 1.4em;
+  max-width: 65%;
+  word-wrap: break-word;
+}
+
+.detail-p {
+  max-width: 35%;
+  text-align: right;
+  word-wrap: break-word;
+}
